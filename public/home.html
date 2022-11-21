@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Online Game</title>
+    <meta name="description" content="Finapp HTML Mobile Template">
+    <meta name="keywords"
+        content="bootstrap, wallet, banking, fintech mobile template, cordova, phonegap, mobile, html, responsive" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="__manifest.json">
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <img src="assets/img/loading-icon.png" alt="icon" class="loading-icon">
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader bg-primary text-light">
+        <div class="left">
+            <a href="#" class="headerButton" data-bs-toggle="modal" data-bs-target="#sidebarPanel">
+                <ion-icon name="menu-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">
+            <img src="assets/img/logo.png" alt="logo" class="logo">
+        </div>
+        <div class="right">
+            <a href="app-notifications.html" class="headerButton">
+                <ion-icon class="icon" name="notifications-outline"></ion-icon>
+                <span class="badge badge-danger">4</span>
+            </a>
+            <a href="app-settings.html" class="headerButton">
+                <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged w32">
+                <span class="badge badge-danger">6</span>
+            </a>
+        </div>
+    </div>
+    <!-- * App Header -->
+
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <!-- Wallet Card -->
+        <div class="section wallet-card-section pt-1">
+            <div class="wallet-card">
+                <!-- Balance -->
+                <div class="balance">
+                    <div class="left">
+                        <span class="title">Available Balance</span>
+                        <h1 class="total">₹ 2,562.50</h1>
+                    </div>
+                    <div class="right">
+                        <a href="#" class="button" data-bs-toggle="modal" data-bs-target="#depositActionSheet">
+                           <ion-icon name="wallet-outline"></ion-icon>
+                        </a>
+                    </div>
+					
+                </div>
+                <!-- * Balance -->
+                <!-- Wallet Footer -->
+            <!--    <div class="wallet-footer">
+                    <div class="item">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#withdrawActionSheet">
+                            <div class="icon-wrapper bg-danger">
+                                <ion-icon name="arrow-down-outline"></ion-icon>
+                            </div>
+                            <strong>Withdraw</strong>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#sendActionSheet">
+                            <div class="icon-wrapper">
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </div>
+                            <strong>Send</strong>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="app-cards.html">
+                            <div class="icon-wrapper bg-success">
+                                <ion-icon name="card-outline"></ion-icon>
+                            </div>
+                            <strong>Cards</strong>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exchangeActionSheet">
+                            <div class="icon-wrapper bg-warning">
+                                <ion-icon name="swap-vertical"></ion-icon>
+                            </div>
+                            <strong>Exchange</strong>
+                        </a>
+                    </div>
+
+                </div>-->
+                <!-- * Wallet Footer -->
+            </div>
+        </div>
+        <!-- Wallet Card -->
+
+        <!-- Deposit Action Sheet -->
+        <div class="modal fade action-sheet" id="depositActionSheet" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Balance</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="action-sheet-content">
+                            <form>
+                                <div class="form-group basic">
+                                    <div class="input-wrapper">
+                                        <label class="label" for="account1">Select Amount</label>
+                                        <select class="form-control custom-select" id="account1">
+                                            <option value="100">₹ 100</option>
+                                            <option value="500">₹ 500</option>
+                                            <option value="1000">₹ 1000</option>
+											<option value="2000">₹ 2000</option>
+											<option value="5000">₹ 5000</option>
+											<option value="10000">₹ 10000</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group basic">
+                                    <label class="label">Enter Amount</label>
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text" id="basic-addona1">₹</span>
+                                        <input type="text" class="form-control" placeholder="Enter an amount"
+                                            value="100">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group basic">
+                                    <button type="button" class="btn btn-primary btn-block btn-lg"
+                                        data-bs-dismiss="modal">Add To Wallet</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- * Deposit Action Sheet -->
+
+        <!-- Withdraw Action Sheet -->
+        <div class="modal fade action-sheet" id="withdrawActionSheet" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Withdraw Money</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="action-sheet-content">
+                            <form>
+                                <div class="form-group basic">
+                                    <div class="input-wrapper">
+                                        <label class="label" for="account2d">From</label>
+                                        <select class="form-control custom-select" id="account2d">
+                                            <option value="0">Savings (*** 5019)</option>
+                                            <option value="1">Investment (*** 6212)</option>
+                                            <option value="2">Mortgage (*** 5021)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group basic">
+                                    <div class="input-wrapper">
+                                        <label class="label" for="text11d">To</label>
+                                        <input type="email" class="form-control" id="text11d" placeholder="Enter IBAN">
+                                        <i class="clear-input">
+                                            <ion-icon name="close-circle"></ion-icon>
+                                        </i>
+                                    </div>
+                                </div>
+
+                                <div class="form-group basic">
+                                    <label class="label">Enter Amount</label>
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text" id="basic-addonb1">$</span>
+                                        <input type="text" class="form-control" placeholder="Enter an amount"
+                                            value="100">
+                                    </div>
+                                </div>
+
+                                <div class="form-group basic">
+                                    <button type="button" class="btn btn-primary btn-block btn-lg"
+                                        data-bs-dismiss="modal">Withdraw</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- * Withdraw Action Sheet -->
+
+        <!-- Send Action Sheet -->
+        <div class="modal fade action-sheet" id="sendActionSheet" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Send Money</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="action-sheet-content">
+                            <form>
+                                <div class="form-group basic">
+                                    <div class="input-wrapper">
+                                        <label class="label" for="account2">From</label>
+                                        <select class="form-control custom-select" id="account2">
+                                            <option value="0">Savings (*** 5019)</option>
+                                            <option value="1">Investment (*** 6212)</option>
+                                            <option value="2">Mortgage (*** 5021)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group basic">
+                                    <div class="input-wrapper">
+                                        <label class="label" for="text11">To</label>
+                                        <input type="email" class="form-control" id="text11"
+                                            placeholder="Enter bank ID">
+                                        <i class="clear-input">
+                                            <ion-icon name="close-circle"></ion-icon>
+                                        </i>
+                                    </div>
+                                </div>
+
+                                <div class="form-group basic">
+                                    <label class="label">Enter Amount</label>
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text" id="basic-addon1">$</span>
+                                        <input type="text" class="form-control" placeholder="Enter an amount"
+                                            value="100">
+                                    </div>
+                                </div>
+
+                                <div class="form-group basic">
+                                    <button type="button" class="btn btn-primary btn-block btn-lg"
+                                        data-bs-dismiss="modal">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- * Send Action Sheet -->
+
+        <!-- Exchange Action Sheet -->
+        <div class="modal fade action-sheet" id="exchangeActionSheet" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Exchange Money</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="action-sheet-content">
+                            <form>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group basic">
+                                            <div class="input-wrapper">
+                                                <label class="label" for="currency1">From</label>
+                                                <select class="form-control custom-select" id="currency1">
+                                                    <option value="1">EUR</option>
+                                                    <option value="2">USD</option>
+                                                    <option value="3">AUD</option>
+                                                    <option value="4">CAD</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group basic">
+                                            <div class="input-wrapper">
+                                                <label class="label" for="currency2">To</label>
+                                                <select class="form-control custom-select" id="currency2">
+                                                    <option value="1">USD</option>
+                                                    <option value="1">EUR</option>
+                                                    <option value="2">AUD</option>
+                                                    <option value="3">CAD</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group basic">
+                                    <label class="label">Enter Amount</label>
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text" id="basic-addon2">$</span>
+                                        <input type="text" class="form-control" placeholder="Enter an amount"
+                                            value="100">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group basic">
+                                    <button type="button" class="btn btn-primary btn-block btn-lg"
+                                        data-bs-dismiss="modal">Exchange</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- * Exchange Action Sheet -->
+
+        <!-- Stats -->
+        <div class="section">
+            <div class="row mt-2">
+                <div class="col-6">
+                    <div class="stat-box">
+						 <img src="assets/img/sample/photo/kb_ludo.jpeg" alt="image" class="imaged img-fluid">
+						<div class="section-title" align="center">Ludo</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="stat-box">
+                        <img src="assets/img/sample/photo/kb_ludo_classic.jpeg" alt="image" class="imaged img-fluid">
+						<div class="section-title" align="center">Ludo Classic</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-6">
+                    <div class="stat-box">
+                         <img src="assets/img/sample/photo/fantasy-cricket.jpeg" alt="image" class="imaged img-fluid">
+						<div class="section-title" align="center">Fantasy Cricket</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="stat-box">
+                        <img src="assets/img/sample/photo/sapsidi.jpg" alt="image" class="imaged img-fluid"><div class="section-title" align="center">Saap Sidhi</div>
+                    </div>
+                </div>
+            </div>
+			 <div class="row mt-2">
+                <div class="col-12">
+                    <div class="stat-box">
+                         <img src="assets/img/sample/photo/ntrick.jpg" alt="image" class="imaged img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- * Stats -->
+
+		
+		 <div class="section inset mb-4 mt-4">
+            <div class="accordion" id="accordionExample1">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#accordion01">
+                            About Us
+                        </button>
+                    </h2>
+                    <div id="accordion01" class="accordion-collapse collapse" data-bs-parent="#accordionExample1">
+                        <div class="accordion-body">
+                            
+
+Kheloindia is a real-money gaming product owned and operated by xxxxxxxxxx ("Kheloindia" or "We" or "Us" or "Our").<br>
+
+<b>Our Business & Products</b><br>
+
+We are an HTML5 game-publishing company and our mission is to make accessing games fast and easy by removing the friction of app-installs.<br>
+
+Kheloindia is a skill-based real-money gaming platform accessible only for our users in India. It is accessible on https://www.Kheloindia.co. On Kheloindia, users can compete for real cash in Tournaments and Battles. They can encash their winnings via popular options such as Paytm Wallet, Amazon Pay, Bank Transfer, Mobile Recharges etc.<br>
+
+<b>Our Games</b><br>
+
+Kheloindia has a wide-variety of high-quality, premium HTML5 games. Our games are especially compressed and optimised to work on low-end devices, uncommon browsers, and patchy internet speeds.<br>
+
+We have games across several popular categories: <br> Arcade, Action, Adventure, Sports & Racing, Strategy, Puzzle & Logic. We also have a strong portfolio of multiplayer games such as Ludo, Chess, 8 Ball Pool, Carrom, Tic Tac Toe, Archery, Quiz, Chinese Checkers and more! Some of our popular titles are: Escape Run, Bubble Wipeout, Tower Twist, Cricket Gunda, Ludo With Friends. If you have any suggestions around new games that we should add or if you are a game developer yourself and want to work with us, don't hesitate to drop in a line at info@Kheloindia.com!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#accordion02">
+                            Terms & Conditions
+                        </button>
+                    </h2>
+                    <div id="accordion02" class="accordion-collapse collapse" data-bs-parent="#accordionExample1">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at feugiat tellus. Sed quis
+                            velit tellus.
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+<br>
+		
+       
+    </div>
+    <!-- * App Capsule -->
+
+
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="app-products.html" class="item">
+            <div class="col">
+                <ion-icon name="pie-chart-outline"></ion-icon>
+                <strong>Products</strong>
+            </div>
+        </a>
+        <a href="app-transactions.html" class="item">
+            <div class="col">
+                <ion-icon name="document-text-outline"></ion-icon>
+                <strong>Transaction</strong>
+            </div>
+        </a>
+        <a href="home.html" class="item active">
+            <div class="col">
+               <ion-icon name="game-controller-outline"></ion-icon>
+                <strong>Games</strong>
+            </div>
+        </a>
+        <a href="app-wallet.html" class="item">
+            <div class="col">
+                <ion-icon name="wallet-outline"></ion-icon>
+                <strong>Wallet</strong>
+            </div>
+        </a>
+        <a href="app-profile.html" class="item">
+            <div class="col">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <strong>Profile</strong>
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+
+    <!-- App Sidebar -->
+    <div class="modal fade panelbox panelbox-left" id="sidebarPanel" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <!-- profile box -->
+                    <div class="profileBox pt-2 pb-2">
+                        <div class="image-wrapper">
+                            <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged  w36">
+                        </div>
+                        <div class="in">
+                            <strong>Rohit </strong>
+                            <div class="text-muted">4029209</div>
+                        </div>
+                        <a href="#" class="btn btn-link btn-icon sidebar-close" data-bs-dismiss="modal">
+                            <ion-icon name="close-outline"></ion-icon>
+                        </a>
+                    </div>
+                    <!-- * profile box -->
+                    <!-- balance -->
+                    <div class="sidebar-balance">
+                        <div class="listview-title">Balance</div>
+                        <div class="in">
+                            <h1 class="amount">$ 2,562.50</h1>
+                        </div>
+                    </div>
+                    <!-- * balance -->
+
+                   
+
+                    <!-- menu -->
+                    <div class="listview-title mt-1"></div>
+                    <ul class="listview flush transparent no-line image-listview">
+                        
+						
+                        <li>
+                            <a href="app-products.html" class="item">
+                                <div class="icon-box bg-primary">
+                                    <ion-icon name="document-text-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                    Merchandise
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="app-home.html" class="item">
+                                <div class="icon-box bg-primary">
+                                    <ion-icon name="game-controller-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                    Games
+                                </div>
+                            </a>
+                        </li>
+						 <li>
+                            <a href="app-numbertrick.html" class="item">
+                                <div class="icon-box bg-primary">
+                                    <ion-icon name="game-controller-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                    Number Trick
+                                </div>
+                            </a>
+                        </li>
+						<li>
+                            <a href="app-wallet.html" class="item">
+                                <div class="icon-box bg-primary">
+                                   <ion-icon name="wallet-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                   My Wallet
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="app-recent-games.html" class="item">
+                                <div class="icon-box bg-primary">
+                                    <ion-icon name="document-text-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                    Recent Games
+                                </div>
+                            </a>
+                        </li>
+						 <li>
+                            <a href="app-transactions.html" class="item">
+                                <div class="icon-box bg-primary">
+                                    <ion-icon name="document-text-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                    Transactions
+                                </div>
+                            </a>
+                        </li>
+						
+						 <li>
+                            <a href="app-refferal.html" class="item">
+                                <div class="icon-box bg-primary">
+                                   <ion-icon name="refresh-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                    Refferal
+                                </div>
+                            </a>
+                        </li>
+						 <li>
+                            <a href="app-contact.html" class="item">
+                                <div class="icon-box bg-primary">
+                                  <ion-icon name="chatbubbles-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                    Support
+                                </div>
+                            </a>
+                        </li>
+						 <li>
+                            <a href="#" class="item">
+                                <div class="icon-box bg-primary">
+                                    <ion-icon name="log-out-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                    Logout
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- * menu -->
+
+                   
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- * App Sidebar -->
+
+
+
+
+
+    <!-- ========= JS Files =========  -->
+    <!-- Bootstrap -->
+    <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+
+    <script>
+        // Add to Home with 2 seconds delay.
+        AddtoHome("2000", "once");
+    </script>
+
+</body>
+
+</html>
